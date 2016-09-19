@@ -1,0 +1,22 @@
+{
+  "name": "mitd-crawler",
+  "version": "1.0.0",
+  "description": "MITD Opportunity Crawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksmac/mitd-crawler.git"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "Nikhil <nikhil@lightrains.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/niksmac/mitd-crawler/issues"
+  },
+  "homepage": "https://github.com/niksmac/mitd-crawler#readme"
+}
