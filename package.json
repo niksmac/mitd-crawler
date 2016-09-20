@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/niksmac/mitd-crawler#readme",
   "dependencies": {
+    "cli-table2": "^0.2.0",
+    "colors": "^1.1.2",
     "crawler": "^0.4.3",
-    "konfig": "^0.2.1"
+    "glob": "^7.0.6",
+    "konfig": "^0.2.1",
+    "moment": "^2.15.0"
   }
 }
