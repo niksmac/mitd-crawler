@@ -26,6 +26,9 @@ glob.sync( './src/**/*.js' ).forEach( function( file ) {
   );
 
   var xmname =require('./' + file);
+  
+  console.log(xmname.getData);
+
   var logEndMsg = 'Finished ' + mname + ' ✓';
   console.log(logEndMsg.yellow);
 
