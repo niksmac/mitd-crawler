@@ -25,7 +25,7 @@ var c = new Crawler({
                     'link'          : assas[3],
                     'amount'        : {
                         'currency'     : "INR",
-                        'value'        : summary[1],
+                        'value'        : summary[1].replace(/[^\d\.]/g, ''),
                     },
                     'category'      : []
                 });
