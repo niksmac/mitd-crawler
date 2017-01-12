@@ -30,7 +30,7 @@ var c = new Crawler({
                     'closingDate'   : $this.find('td:nth-child(4)').text().trim(),
                     'link'          : "https://www.merx.com/iris-tenders-search.active-1470801600000-1471406399000-Last%20Week-ETENDMERX--8534-efjn-en.jsa?SD=DESC&SF=PUBLICATION_DATE"+assas,
                     'amount'        : {
-                        'currency'     : "INR",
+                        'currency'     : "NA",
                         'value'        : "NA",
                     },
                     'category'      : [],
