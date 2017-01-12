@@ -15,7 +15,12 @@ var c = new Crawler({
             var data = [];
             $('td div.cent > table table').each(function() {
                 var $this = $(this);
-                var summary = $this.find('td:nth-child(1) table tr td:nth-child(2)').html();                                                         
+                var assas = "";
+                if($this.find('tr:nth-child(5) td table tr td:nth-child(2)').html() != null) {
+                var summary = $this.find('tr:nth-child(5) td table tr td:nth-child(2)').html().trim().split('<br>');
+                assas  = u.urlify(summary[0]).split('"');
+                assas = assas[1];               
+                }                                                        
                 if($this.find('tr:nth-child(1) td table tr td:nth-child(4)').text() != '') {
                
                 data.push({
@@ -23,7 +28,7 @@ var c = new Crawler({
                     'description'   : $this.find('tr:nth-child(3) td table tr td:nth-child(2)').text(),
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('tr:nth-child(4) td table tr td:nth-child(2)').text().trim()).getTime()/1000,
-                    // 'link'          : assas[3],
+                    'link'          : "http://www.ittenders.com/information_technology_usa.htm/"+assas,
                      'amount'        : {
                          'currency'     : "NA",
                          'value'        : "NA",
