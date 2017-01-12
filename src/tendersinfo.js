@@ -21,13 +21,15 @@ var c = new Crawler({
                     'name'          : $this.find('td:nth-child(1)').text().trim(),
                     'description'   : "NA",
                     'date'          : new Date($this.find('td:nth-child(2)').text().trim()).getTime()/1000,
-                    'closingdate'   : new Date($this.find('td:nth-child(2)').text().trim()).getTime()/1000,
+                    'closingDate'   : new Date($this.find('td:nth-child(2)').text().trim()).getTime()/1000,
                     'link'          : assas[3],
                     'amount'        : {
                         'currency'     : "INR",
                         'value'        : summary[1].replace(/[^\d\.]/g, ''),
                     },
-                    'category'      : []
+                    'category'      : [],
+                    'tenderNumber' : "NA"
+
                 });
             })
             console.log(data)
