@@ -3,7 +3,6 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
-require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
