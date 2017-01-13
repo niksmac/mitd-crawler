@@ -3,7 +3,6 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
-require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -23,12 +22,13 @@ var c = new Crawler({
                     assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1];                   
                 }
+                
                 if($this.find('td:nth-child(2) p:nth-child(3) span.ln_listing').text() != '') {
                  data.push({
                     'name'          : "United States",
                     'description'   : "NA",
                     'date'          : new Date($this.find('td:nth-child(4) div.ln_date').text().trim()).getTime()/1000,
-                    'closingDate'   : "NA",
+                    'closingDate'   : $this.find('td:nth-child(4) div.ln_deadline').text().trim(),
                     'link'          : "http://www.dgmarket.com/tenders/list.do?sub=it-services-consulting-software-development-internet-and-support-in-United-States-72000000&locationISO=us"+assas,
                     'amount'        : {
                         'currency'     : "NA",
