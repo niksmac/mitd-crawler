@@ -27,8 +27,8 @@ var c = new Crawler({
                     'name'          : $this.find('.views-field-title').text().trim(),
                     'description'   : "NA",
                     'date'          : start_date,
-                    'closingDate'   : "NA",
-                    'link'          : end_date,
+                    'closingDate'   : end_date,
+                    'link'          : link,
                      'amount'        : {
                          'currency'     : "NA",
                          'value'        : "NA",
