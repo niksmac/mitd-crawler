@@ -17,8 +17,9 @@ var c = new Crawler({
                 var $this = $(this);
                 var summary = $this.find('td:nth-child(3)').html().trim().split('<br>');
                 var assas  = u.urlify(summary[0]).split('"');
+
                 data.push({
-                    'name'          : $this.find('td:nth-child(1)').text().trim(),
+                    'name'          : $this.find('td:nth-child(3)').text().trim(),
                     'description'   : "NA",
                     'date'          : new Date($this.find('td:nth-child(2)').text().trim()).getTime()/1000,
                     'closingDate'   : new Date($this.find('td:nth-child(2)').text().trim()).getTime()/1000,
