@@ -15,18 +15,24 @@ var c = new Crawler({
             var data = [];
              $('table.mainBodyTable tr td table').each(function() {
                 var $this = $(this);
-                var assas = "";            
+                var assas = ""; 
+                var date =  $this.find('td:nth-child(3)').text().trim().split('/');
+                var start_date = new Date(date[2],date[0]-1,date[1]).getTime()/1000;
+                var close_date = $this.find('td:nth-child(4)').text().trim().split('/');
+                var end_date = new Date(close_date[2],close_date[0]-1,close_date[1]).getTime()/1000;
+                     
                 if($this.find('td:nth-child(1)').html() != null) {
                     var summary = $this.find('td:nth-child(1)').html().trim().split('<br>');
                     assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1];
                 }
-                if($this.find('td:nth-child(2)').text().trim() != '') {
+
+                if($this.find('td:nth-child(1) a').text().trim() != '') {
                 data.push({
-                    'name'          : $this.find('td:nth-child(2)').text().trim(),
+                    'name'          : $this.find('td:nth-child(1) a').text().trim(),
                     'description'   : "NA",
-                    'date'          : $this.find('td:nth-child(3)').text().trim(),
-                    'closingDate'   : $this.find('td:nth-child(4)').text().trim(),
+                    'date'          : start_date,
+                    'closingDate'   : end_date,
                     'link'          : "https://www.merx.com/iris-tenders-search.active-1470801600000-1471406399000-Last%20Week-ETENDMERX--8534-efjn-en.jsa?SD=DESC&SF=PUBLICATION_DATE"+assas,
                     'amount'        : {
                         'currency'     : "NA",
