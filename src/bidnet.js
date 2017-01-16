@@ -22,7 +22,7 @@ var c = new Crawler({
                 }
              if($this.find('td:nth-child(1) a').text() != '') {
                 data.push({
-                    'name'          : $this.find('td:nth-child(1) a').text().trim(),
+                    'name'          : $this.find('td:nth-child(3)').text().trim(),
                     'description'   : "NA",
                     'date'          : "NA",
                     'closingDate'   : "NA",
