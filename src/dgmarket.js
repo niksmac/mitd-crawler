@@ -14,7 +14,7 @@ var c = new Crawler({
             $ = cheerio.load(res.body);
             var data = [];
              $('table.list_notice_table tr').each(function() {
-                var $this = $(this);                                         
+                var $this = $(this);   
 
                 if($this.find('td:nth-child(2) div.ln_notice_title').html() != null) {
 
@@ -23,9 +23,9 @@ var c = new Crawler({
                     assas = assas[1];                   
                 }
                 
-                if($this.find('td:nth-child(2) p:nth-child(3) span.ln_listing').text() != '') {
+                if($this.find('td:nth-child(2) div.ln_notice_title').text() != '') {
                  data.push({
-                    'name'          : "United States",
+                    'name'          : $this.find('td:nth-child(2) div.ln_notice_title').text().trim(),
                     'description'   : "NA",
                     'date'          : new Date($this.find('td:nth-child(4) div.ln_date').text().trim()).getTime()/1000,
                     'closingDate'   : $this.find('td:nth-child(4) div.ln_deadline').text().trim(),
