@@ -24,7 +24,7 @@ var c = new Crawler({
 
             if($this.find('tr:nth-child(1) td table tr td:nth-child(4)').text() != '') {
                 data.push({
-                    'name'          : $this.find('tr:nth-child(1) td table tr td:nth-child(4)').text().trim(),
+                    'name'          : $this.find('tr:nth-child(3) td table tr td:nth-child(2)').text(),
                     'description'   : $this.find('tr:nth-child(3) td table tr td:nth-child(2)').text(),
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('tr:nth-child(4) td table tr td:nth-child(2)').text().trim()).getTime()/1000,
