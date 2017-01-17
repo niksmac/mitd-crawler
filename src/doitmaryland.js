@@ -3,7 +3,6 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
-require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -27,7 +26,7 @@ var c = new Crawler({
                 var date = new Date(due[2],due[0]-1,due[1]).getTime()/1000;  
               
                 if(typeof(title) != "undefined") {
-                    
+
                     data.push({
                     'name'          : title.trim(),
                     'description'   : "NA",
