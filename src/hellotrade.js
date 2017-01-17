@@ -16,11 +16,11 @@ var c = new Crawler({
             $('div.wd_sm div.ten_sm_box').each(function() {
                 var $this = $(this);                
                 var summary = $this.find('p').html().trim().split('<br>');                
-                var assas  = u.urlify(summary[0]).split('"');             
+                var assas  = u.urlify(summary[0]).split('"');
                 
-            if($this.find('div.tendr_cal div:nth-child(2) p').text().trim() != '') {
+            if($this.find('p a').text() != '') {
                 data.push({
-                    'name'          : $this.find('div.tendr_cal div:nth-child(2) p').text().trim(),
+                    'name'          : $this.find('p a').text().trim(),
                     'description'   : $this.find('div.tendr_main div.tendr_right div:nth-child(1) p.tendr_md').text().trim(),
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('div.tendr_cal div:nth-child(1) p.tendr_right').text().trim()).getTime()/1000,
