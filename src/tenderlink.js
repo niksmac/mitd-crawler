@@ -3,6 +3,7 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -16,11 +17,11 @@ var c = new Crawler({
             $('div.bizOpportunities div.bizOppWrap').each(function() {
                 var $this = $(this);                                
                 var date  = $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(2) strong').text().trim().split('/');
-                var start_date = new Date(date[2],date[0]-1,date[1]).getTime()/1000;               
-                
+                var start_date = new Date(date[2],date[0]-1,date[1]).getTime()/1000; 
+
             if($this.find('div.bizOppWrapInner dl:nth-child(1) dd').text().trim() != '') {
                 data.push({
-                    'name'          : $this.find('div.bizOppWrapInner dl:nth-child(1) dd').text().trim(),
+                    'name'          : $this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim(),
                     'description'   : "NA",
                     'date'          : new Date(date[2],date[0]-1,date[1]).getTime()/1000,
                     'closingDate'   : "NA",
