@@ -19,20 +19,19 @@ var c = new Crawler({
                 var date  = $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(2) strong').text().trim().split('/');
                 var start_date = new Date(date[2],date[0]-1,date[1]).getTime()/1000; 
 
-            if($this.find('div.bizOppWrapInner dl:nth-child(1) dd').text().trim() != '') {
-                data.push({
-                    'name'          : $this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim(),
-                    'description'   : "NA",
-                    'date'          : new Date(date[2],date[0]-1,date[1]).getTime()/1000,
-                    'closingDate'   : "NA",
-                    //'link'          : "NA",
-                    'currency'     : "NA",
-                    'value'        : "NA",
-                    'category'      : [$this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim()],
-                    'tenderNumber' : $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(1)').text().trim()
-
-                });
-            }
+                if($this.find('div.bizOppWrapInner dl:nth-child(1) dd').text().trim() != '') {
+                    data.push({
+                        'name'          : $this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim(),
+                        'description'   : "NA",
+                        'date'          : new Date(date[2],date[0]-1,date[1]).getTime()/1000,
+                        'closingDate'   : "NA",
+                        'link'          : "https://www2.tenderlink.com/tenders/it/",
+                        'currency'     : "NA",
+                        'value'        : "NA",
+                        'category'      : [$this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim()],
+                        'tenderNumber' : $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(1)').text().trim()
+                    });
+                }
             })
             console.log(data)
         }
