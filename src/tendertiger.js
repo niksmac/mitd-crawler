@@ -25,10 +25,8 @@ var c = new Crawler({
                      'date'          : "NA",
                      'closingDate'   : new Date($this.find('tr:nth-child(1) td:nth-child(3) span.orage-text').text().trim()).getTime()/1000,
                      //'link'          : assas[3],
-                     'amount'        : {
-                        'currency'     : "NA",
-                        'value'        : "NA",
-                     },
+                     'currency'     : "NA",
+                     'value'        : "NA",
                      'category'      : [$this.find('tr:nth-child(1) td:nth-child(1) span').text().split(":")[1].trim()],
                      'tenderNumber' : "NA"
 

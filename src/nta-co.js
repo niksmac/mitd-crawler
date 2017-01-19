@@ -28,11 +28,9 @@ var c = new Crawler({
                     'description'   : "NA",
                     'date'          : start_date,
                     'closingDate'   : end_date,
-                    'link'          : link,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                    'link'          : link,                  
+                    'currency'     : "NA",
+                    'value'        : "NA",               
                     'category'      : [$this.find('.views-field-field-domains').text().trim()],
                     'tenderNumber' : $this.find('views-field-field-tender-number').text().trim()
 

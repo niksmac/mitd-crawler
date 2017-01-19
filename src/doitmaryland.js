@@ -32,11 +32,9 @@ var c = new Crawler({
                     'description'   : "NA",
                     'date'          : "NA",
                     'closingDate'   : date,
-                    'link'          : "http://doit.maryland.gov/contracts/Pages/bids.aspx"+link,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                    'link'          : "http://doit.maryland.gov/contracts/Pages/bids.aspx"+link,                 
+                    'currency'     : "NA",
+                    'value'        : "NA",                   
                     'category'      : [],
                     'tenderNumber' : "NA"
 

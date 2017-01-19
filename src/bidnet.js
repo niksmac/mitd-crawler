@@ -26,11 +26,9 @@ var c = new Crawler({
                     'description'   : "NA",
                     'date'          : "NA",
                     'closingDate'   : "NA",
-                    'link'          : "http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids"+assas,
-                    'amount'        : {
-                        'currency'     : "NA",
-                        'value'        : "NA",
-                    },
+                    'link'          : "http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids"+assas,                    
+                    'currency'     : "NA",
+                    'value'        : "NA",                   
                     'category'      : [],
                     'tenderNumber' : "NA"
 

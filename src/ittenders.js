@@ -29,10 +29,8 @@ var c = new Crawler({
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('tr:nth-child(4) td table tr td:nth-child(2)').text().trim()).getTime()/1000,
                     'link'          : "http://www.ittenders.com/information_technology_usa.htm/"+assas,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                    'currency'     : "NA",
+                    'value'        : "NA",                   
                     'category'      : $this.find('tr:nth-child(2) td table tr td:nth-child(2)').text().split(","),
                     'tenderNumber'  : $this.find('tr:nth-child(4) td table tr td:nth-child(4)').text().trim()
 

@@ -29,11 +29,9 @@ var c = new Crawler({
                     'description'   : "NA",
                     'date'          : new Date($this.find('td:nth-child(4) div.ln_date').text().trim()).getTime()/1000,
                     'closingDate'   : $this.find('td:nth-child(4) div.ln_deadline').text().trim(),
-                    'link'          : "http://www.dgmarket.com/tenders/list.do?sub=it-services-consulting-software-development-internet-and-support-in-United-States-72000000&locationISO=us"+assas,
-                    'amount'        : {
-                        'currency'     : "NA",
-                        'value'        : "NA",
-                    },
+                    'link'          : "http://www.dgmarket.com/tenders/list.do?sub=it-services-consulting-software-development-internet-and-support-in-United-States-72000000&locationISO=us"+assas,                   
+                    'currency'     : "NA",
+                    'value'        : "NA",                   
                     'category'      : $this.find('td:nth-child(2) p:nth-child(4) span.ln_listing').text().split(","),
                     'tenderNumber' : "NA"
 

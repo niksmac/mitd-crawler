@@ -28,11 +28,9 @@ var c = new Crawler({
                     'description'   : $this[0].children[2].data.trim(),
                     'date'          : new Date($this.find('table.subtitle span').text().trim()).getTime()/1000,
                     'closingDate'   : "NA",
-                    'link'          : "https://www.tenders.wa.gov.au/watenders/index.do"+link,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                    'link'          : "https://www.tenders.wa.gov.au/watenders/index.do"+link,                  
+                    'currency'     : "NA",
+                    'value'        : "NA",                    
                     'category'      : [],
                     'tenderNumber' : "NA"
 

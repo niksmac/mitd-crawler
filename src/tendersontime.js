@@ -31,11 +31,9 @@ var c = new Crawler({
                     'description'   : "NA",
                     'date'          : "NA",
                     'closingDate'   : end_date,
-                    'link'          : "http://www.tendersontime.com/search-list.php"+link,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                    'link'          : "http://www.tendersontime.com/search-list.php"+link,                 
+                    'currency'     : "NA",
+                    'value'        : "NA",                  
                     'category'      : [],
                     'tenderNumber' : "NA"
 

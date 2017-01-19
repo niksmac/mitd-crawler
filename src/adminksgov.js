@@ -25,11 +25,9 @@ var c = new Crawler({
                     'description'   : $this.find('td:nth-child(3)').text().trim(),
                     'date'          : "NA",
                     'closingDate'   : end_date,
-                    'link'          : link,
-                    'amount'        : {
-                        'currency'     : "NA",
-                        'value'        : "NA",
-                    },
+                    'link'          : link,                   
+                    'currency'     : "NA",
+                    'value'        : "NA",                  
                     'category'      : [$this.find('td:nth-child(4)').text().trim()],
                     'tenderNumber' : $this.find('td:nth-child(2)').text().trim()
 

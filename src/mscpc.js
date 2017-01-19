@@ -28,11 +28,9 @@ var c = new Crawler({
                      'description'   : "NA",
                      'date'          : "NA",
                      'closingDate'   : "NA",
-                     'link'          : link,
-                     'amount'        : {
-                         'currency'     : "NA",
-                         'value'        : "NA",
-                     },
+                     'link'          : link,                
+                     'currency'     : "NA",
+                     'value'        : "NA",       
                      'category'      : [],
                      'tenderNumber' : "NA"
 

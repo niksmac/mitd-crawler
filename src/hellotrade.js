@@ -24,11 +24,9 @@ var c = new Crawler({
                     'description'   : $this.find('div.tendr_main div.tendr_right div:nth-child(1) p.tendr_md').text().trim(),
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('div.tendr_cal div:nth-child(1) p.tendr_right').text().trim()).getTime()/1000,
-                    'link'          : "http://tenders.hellotrade.com/tenders.php?pid=33676653"+assas,
-                    'amount'        : {
-                        'currency'     : "USD",
-                        'value'        : $this.find('div.tendr_main div.ht_100').text().replace(/[^\d\.]/g, ''),
-                    },
+                    'link'          : "http://tenders.hellotrade.com/tenders.php?pid=33676653"+assas,                  
+                    'currency'     : "USD",
+                    'value'        : $this.find('div.tendr_main div.ht_100').text().replace(/[^\d\.]/g, ''),                   
                     'category'      : [$this.find('div.tendr_main div.tendr_right div:nth-child(2) p.tendr_md').text().trim()],
                     'tenderNumber' : "NA"
 

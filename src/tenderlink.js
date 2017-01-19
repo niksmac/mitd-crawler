@@ -26,10 +26,8 @@ var c = new Crawler({
                     'date'          : new Date(date[2],date[0]-1,date[1]).getTime()/1000,
                     'closingDate'   : "NA",
                     //'link'          : "NA",
-                    'amount'        : {
-                        'currency'     : "NA",
-                        'value'        : "NA",
-                    },
+                    'currency'     : "NA",
+                    'value'        : "NA",
                     'category'      : [$this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim()],
                     'tenderNumber' : $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(1)').text().trim()
 

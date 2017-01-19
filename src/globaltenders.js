@@ -28,11 +28,9 @@ var c = new Crawler({
                     'description'   : $this.find('tr:nth-child(3) td table tr td:nth-child(2)').text(),
                     'date'          : "NA",
                     'closingDate'   : new Date($this.find('tr:nth-child(4) td table tr td:nth-child(2)').text().trim()).getTime()/1000,
-                    'link'          : "http://www.globaltenders.com/"+assas,
-                    'amount'        : {
-                        'currency'     : "INR",
-                        'value'        : $this.find('tr:nth-child(5) td table tr td:nth-child(4)').text().replace(/[^\d\.]/g, ''),
-                    },
+                    'link'          : "http://www.globaltenders.com/"+assas,                   
+                    'currency'     : "INR",
+                    'value'        : $this.find('tr:nth-child(5) td table tr td:nth-child(4)').text().replace(/[^\d\.]/g, ''),
                     'category'      : $this.find('tr:nth-child(2) td table tr td:nth-child(2)').text().split(","),
                     'tenderNumber'  : $this.find('tr:nth-child(4) td table tr td:nth-child(4)').text().trim()
 
