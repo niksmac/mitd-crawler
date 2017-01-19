@@ -14,24 +14,23 @@ var c = new Crawler({
             $ = cheerio.load(res.body);
             var data = [];
             $('div#filtertenderList table tr table').each(function() {
-            var $this = $(this); 
-            var sum  = $this.find('tr:nth-child(1) td:nth-child(1)')[0].children[3].attribs.href.trim();                 
+                var $this = $(this); 
+                var sum  = $this.find('tr:nth-child(1) td:nth-child(1)')[0].children[3].attribs.href.trim();                 
 
-            if($this.find('tr:nth-child(1) td:nth-child(1) a').text() != '') {
+                if($this.find('tr:nth-child(1) td:nth-child(1) a').text() != '') {
                 
-                data.push({ 
-                     'name'          : $this.find('tr:nth-child(1) td:nth-child(1) a').text().trim(),
-                     'description'   : "NA",
-                     'date'          : "NA",
-                     'closingDate'   : new Date($this.find('tr:nth-child(1) td:nth-child(3) span.orage-text').text().trim()).getTime()/1000,
-                     'link'          : sum,
-                     'currency'     : "NA",
-                     'value'        : "NA",
-                     'category'      : [$this.find('tr:nth-child(1) td:nth-child(1) span').text().split(":")[1].trim()],
-                     'tenderNumber' : $this.find('tr:nth-child(2) td:nth-child(1) span').text().trim().replace(/[^\d\.]/g, '')
-
-                });
-            }
+                    data.push({ 
+                        'name'          : $this.find('tr:nth-child(1) td:nth-child(1) a').text().trim(),
+                        'description'   : "NA",
+                        'date'          : "NA",
+                        'closingDate'   : new Date($this.find('tr:nth-child(1) td:nth-child(3) span.orage-text').text().trim()).getTime()/1000,
+                        'link'          : sum,
+                        'currency'     : "NA",
+                        'value'        : "NA",
+                        'category'      : [$this.find('tr:nth-child(1) td:nth-child(1) span').text().split(":")[1].trim()],
+                        'tenderNumber' : $this.find('tr:nth-child(2) td:nth-child(1) span').text().trim().replace(/[^\d\.]/g, '')
+                    });
+                }
             })
             console.log(data)
         }
