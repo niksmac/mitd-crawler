@@ -18,20 +18,19 @@ var c = new Crawler({
                 var summary = $this.find('p').html().trim().split('<br>');                
                 var assas  = u.urlify(summary[0]).split('"');
                 
-            if($this.find('p a').text() != '') {
-                data.push({
-                    'name'          : $this.find('p a').text().trim(),
-                    'description'   : $this.find('div.tendr_main div.tendr_right div:nth-child(1) p.tendr_md').text().trim(),
-                    'date'          : "NA",
-                    'closingDate'   : new Date($this.find('div.tendr_cal div:nth-child(1) p.tendr_right').text().trim()).getTime()/1000,
-                    'link'          : "http://tenders.hellotrade.com/tenders.php?pid=33676653"+assas,                  
-                    'currency'     : "USD",
-                    'value'        : $this.find('div.tendr_main div.ht_100').text().replace(/[^\d\.]/g, ''),                   
-                    'category'      : [$this.find('div.tendr_main div.tendr_right div:nth-child(2) p.tendr_md').text().trim()],
-                    'tenderNumber' : "NA"
-
-                });
-            }
+                if($this.find('p a').text() != '') {
+                    data.push({
+                        'name'          : $this.find('p a').text().trim(),
+                        'description'   : $this.find('div.tendr_main div.tendr_right div:nth-child(1) p.tendr_md').text().trim(),
+                        'date'          : "NA",
+                        'closingDate'   : new Date($this.find('div.tendr_cal div:nth-child(1) p.tendr_right').text().trim()).getTime()/1000,
+                        'link'          : "http://tenders.hellotrade.com/tenders.php?pid=33676653"+assas,                  
+                        'currency'     : "USD",
+                        'value'        : $this.find('div.tendr_main div.ht_100').text().replace(/[^\d\.]/g, ''),                   
+                        'category'      : [$this.find('div.tendr_main div.tendr_right div:nth-child(2) p.tendr_md').text().trim()],
+                        'tenderNumber' : "NA"
+                    });
+                }
             })
             console.log(data)
         }

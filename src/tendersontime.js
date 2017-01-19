@@ -27,16 +27,15 @@ var c = new Crawler({
                 if($this.find('td:nth-child(2)').text().trim() != '') {
 
                     data.push({
-                    'name'          : $this.find('td:nth-child(2)').text().trim(),
-                    'description'   : "NA",
-                    'date'          : "NA",
-                    'closingDate'   : end_date,
-                    'link'          : "http://www.tendersontime.com/search-list.php"+link,                 
-                    'currency'     : "NA",
-                    'value'        : "NA",                  
-                    'category'      : [],
-                    'tenderNumber' : "NA"
-
+                        'name'          : $this.find('td:nth-child(2)').text().trim(),
+                        'description'   : "NA",
+                        'date'          : "NA",
+                        'closingDate'   : end_date,
+                        'link'          : "http://www.tendersontime.com/search-list.php"+link,                 
+                        'currency'     : "NA",
+                        'value'        : "NA",                  
+                        'category'      : [],
+                        'tenderNumber' : "NA"
                     });
                 }
             })

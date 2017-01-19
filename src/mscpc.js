@@ -33,9 +33,8 @@ var c = new Crawler({
                      'value'        : "NA",       
                      'category'      : [],
                      'tenderNumber' : "NA"
-
                     });
-                 }
+                }
             })
             console.log(data)
         }

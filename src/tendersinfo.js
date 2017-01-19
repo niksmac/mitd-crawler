@@ -28,7 +28,6 @@ var c = new Crawler({
                     'value'        : summary[1].replace(/[^\d\.]/g, ''),               
                     'category'      : [],
                     'tenderNumber' : "NA"
-
                 });
             })
             console.log(data)

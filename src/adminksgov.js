@@ -30,7 +30,6 @@ var c = new Crawler({
                     'value'        : "NA",                  
                     'category'      : [$this.find('td:nth-child(4)').text().trim()],
                     'tenderNumber' : $this.find('td:nth-child(2)').text().trim()
-
                 });
             })
             delete data[0];

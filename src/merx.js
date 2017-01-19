@@ -28,18 +28,17 @@ var c = new Crawler({
                 }
 
                 if($this.find('td:nth-child(1) a').text().trim() != '') {
-                data.push({
-                    'name'          : $this.find('td:nth-child(1) a').text().trim(),
-                    'description'   : "NA",
-                    'date'          : start_date,
-                    'closingDate'   : end_date,
-                    'link'          : "https://www.merx.com/iris-tenders-search.active-1470801600000-1471406399000-Last%20Week-ETENDMERX--8534-efjn-en.jsa?SD=DESC&SF=PUBLICATION_DATE"+assas,                 
-                    'currency'     : "NA",
-                    'value'        : "NA",
-                    'category'      : [],
-                    'tenderNumber' : "NA"
-
-                });
+                    data.push({
+                        'name'          : $this.find('td:nth-child(1) a').text().trim(),
+                        'description'   : "NA",
+                        'date'          : start_date,
+                        'closingDate'   : end_date,
+                        'link'          : "https://www.merx.com/iris-tenders-search.active-1470801600000-1471406399000-Last%20Week-ETENDMERX--8534-efjn-en.jsa?SD=DESC&SF=PUBLICATION_DATE"+assas,                 
+                        'currency'     : "NA",
+                        'value'        : "NA",
+                        'category'      : [],
+                        'tenderNumber' : "NA"
+                    });
                 }   
              })
             console.log(data);

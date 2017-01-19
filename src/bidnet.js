@@ -20,20 +20,19 @@ var c = new Crawler({
                     var assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1]; 
                 }
-             if($this.find('td:nth-child(1) a').text() != '') {
-                data.push({
-                    'name'          : $this.find('td:nth-child(3)').text().trim(),
-                    'description'   : "NA",
-                    'date'          : "NA",
-                    'closingDate'   : "NA",
-                    'link'          : "http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids"+assas,                    
-                    'currency'     : "NA",
-                    'value'        : "NA",                   
-                    'category'      : [],
-                    'tenderNumber' : "NA"
-
-                });
-            }
+                if($this.find('td:nth-child(1) a').text() != '') {
+                    data.push({
+                        'name'          : $this.find('td:nth-child(3)').text().trim(),
+                        'description'   : "NA",
+                        'date'          : "NA",
+                        'closingDate'   : "NA",
+                        'link'          : "http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids"+assas,                    
+                        'currency'     : "NA",
+                        'value'        : "NA",                   
+                        'category'      : [],
+                        'tenderNumber' : "NA"
+                    });
+                }
             })
            console.log(data)
         }

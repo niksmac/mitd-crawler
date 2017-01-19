@@ -28,16 +28,15 @@ var c = new Crawler({
                 if(typeof(title) != "undefined") {
 
                     data.push({
-                    'name'          : title.trim(),
-                    'description'   : "NA",
-                    'date'          : "NA",
-                    'closingDate'   : date,
-                    'link'          : "http://doit.maryland.gov/contracts/Pages/bids.aspx"+link,                 
-                    'currency'     : "NA",
-                    'value'        : "NA",                   
-                    'category'      : [],
-                    'tenderNumber' : "NA"
-
+                        'name'          : title.trim(),
+                        'description'   : "NA",
+                        'date'          : "NA",
+                        'closingDate'   : date,
+                        'link'          : "http://doit.maryland.gov/contracts/Pages/bids.aspx"+link,                 
+                        'currency'     : "NA",
+                        'value'        : "NA",                   
+                        'category'      : [],
+                        'tenderNumber' : "NA"
                     });
                 }
             })

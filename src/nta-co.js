@@ -22,20 +22,19 @@ var c = new Crawler({
                 var last_date = $this.find('.views-field-field-last-date').text().trim().split('.');
                 var end_date = new Date(last_date[2],last_date[0]-1,last_date[1]).getTime()/1000;  
                
-            if($this.find('.views-field-title').text().trim() != '') {
-                data.push({
-                    'name'          : $this.find('.views-field-title').text().trim(),
-                    'description'   : "NA",
-                    'date'          : start_date,
-                    'closingDate'   : end_date,
-                    'link'          : link,                  
-                    'currency'     : "NA",
-                    'value'        : "NA",               
-                    'category'      : [$this.find('.views-field-field-domains').text().trim()],
-                    'tenderNumber' : $this.find('views-field-field-tender-number').text().trim()
-
-                });
-            }
+                if($this.find('.views-field-title').text().trim() != '') {
+                    data.push({
+                        'name'          : $this.find('.views-field-title').text().trim(),
+                        'description'   : "NA",
+                        'date'          : start_date,
+                        'closingDate'   : end_date,
+                        'link'          : link,                  
+                        'currency'     : "NA",
+                        'value'        : "NA",               
+                        'category'      : [$this.find('.views-field-field-domains').text().trim()],
+                        'tenderNumber' : $this.find('views-field-field-tender-number').text().trim()
+                    });
+                }
             })
             console.log(data)
         }
