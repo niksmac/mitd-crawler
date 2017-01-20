@@ -47,5 +47,3 @@ var c = new Crawler({
 c.queue('https://www.fbo.gov/index?s=opportunity&mode=list&tab=list');
 
 module.exports.getData = c.length;
-
-//Technical issue
