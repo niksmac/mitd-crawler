@@ -3,7 +3,6 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
-require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -21,10 +20,7 @@ var c = new Crawler({
                     var link = u.urlify(sum[0]).split('"');
                     link = link[1];
                 }    
-                var title = $this.find('td:nth-child(2) div.pagency').text().trim(); 
-                                             
-                //eval(locus);
-
+                var title = $this.find('td:nth-child(2) div.pagency').text().trim();              
                 if($this.find('td:nth-child(1) a div:nth-child(1)').text() != '') {
                 
                     data.push({ 
