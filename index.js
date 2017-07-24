@@ -7,6 +7,7 @@ var Crawler = require("crawler"),
   colors = require('colors'),
   Table = require('cli-table2'),
   moment = require('moment');
+  fs = require('fs');
 
 var i = 1, c = 0;
 
@@ -19,22 +20,27 @@ var date = new Date();
 glob.sync( './src/**/*.js' ).forEach( function( file ) {
   var name = file.replace('.js', '');
   var mname = name.replace('./src/', '');
-  var hm = Math.floor(Math.random()*(30-1+1)+1);
-  c+=hm;
-  table.push(
-    [i, mname, hm, moment().format('LTS')]
-  );
+  // var hm = Math.floor(Math.random()*(30-1+1)+1);
+  // c+=hm;
+  // table.push(
+  //   [i, mname, hm, moment().format('LTS')]
+  // );
 
   var xmname =require('./' + file);
+
   
-  console.log(xmname.getData);
+   //console.log(xmname.getData);
 
-  var logEndMsg = 'Finished ' + mname + ' ✓';
-  console.log(logEndMsg.yellow);
+   //var logEndMsg = 'Finished ' + mname + ' ✓';
+  // console.log(logEndMsg.yellow);
 
+  fs.writeFile ("input.json", JSON.stringify(xmname), function(err) {
+    if (err) throw err;
+    //console.log('complete');
+    })
   i++;
-
 });
+
 
 table.push(
   ['', 'Total', c, moment().format('LTS')]

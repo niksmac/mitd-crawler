@@ -41,7 +41,7 @@ var c = new Crawler({
                     });
                 }   
              })
-            console.log(data);
+            
         }
         done();
     }

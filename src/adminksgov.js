@@ -33,7 +33,7 @@ var c = new Crawler({
                 });
             })
             delete data[0];
-            console.log(data)
+            
         }
         done();
     }

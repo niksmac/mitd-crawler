@@ -30,7 +30,7 @@ var c = new Crawler({
                     'tenderNumber' : "NA"
                 });
             })
-            console.log(data)
+            
         }
         done();
     }
