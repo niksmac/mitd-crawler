@@ -3,6 +3,9 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
     maxConnections : 1,
@@ -35,17 +38,16 @@ var c = new Crawler({
                     'tenderNumber' : "NA"
                     });
                 }
-            })
-            
+            })            
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
 
 
 // Queue just one URL, with default callback 
- c.queue('https://www.tenders.wa.gov.au/watenders/index.do');
+c.queue('https://www.tenders.wa.gov.au/watenders/index.do');
 
-module.exports.getData = c.length;
 
 

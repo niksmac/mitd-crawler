@@ -3,6 +3,9 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
     maxConnections : 1,
@@ -32,8 +35,8 @@ var c = new Crawler({
                     });
                 }
             })
-            
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
@@ -51,7 +54,4 @@ fs.readFile( process.cwd() + '/test1.html', function (err, data) {
     c.queue([{
         html: data.toString()
     }]);
-
 });
-
-module.exports.getData = c.length;

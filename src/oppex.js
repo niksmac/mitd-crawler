@@ -3,6 +3,9 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
     maxConnections : 1,
@@ -35,16 +38,14 @@ var c = new Crawler({
                     });
                 }
             })
-            
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
 
 
 // Queue just one URL, with default callback 
- c.queue('https://oppex.com/search?description%5B0%5D%5Bvalue%5D=IT&description%5B0%5D%5Boperator%5D=OR&description%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Bvalue%5D=US&country%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Boperator%5D=OR&deadlineFrom%5Bvalue%5D=2016-08-');
-
-module.exports.getData = c.length;
+c.queue('https://oppex.com/search?description%5B0%5D%5Bvalue%5D=IT&description%5B0%5D%5Boperator%5D=OR&description%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Bvalue%5D=US&country%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Boperator%5D=OR&deadlineFrom%5Bvalue%5D=2016-08-');
 
 

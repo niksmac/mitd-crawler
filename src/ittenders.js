@@ -3,6 +3,9 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
     maxConnections : 1,
@@ -35,9 +38,9 @@ var c = new Crawler({
                         'tenderNumber'  : $this.find('tr:nth-child(4) td table tr td:nth-child(4)').text().trim()
                     });
                 }
-            })
-            
+            })            
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
@@ -57,6 +60,3 @@ var c = new Crawler({
 //     }]);
 
 // });
-
-
-module.exports.getData = c.length;

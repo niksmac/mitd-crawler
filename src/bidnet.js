@@ -4,6 +4,8 @@ var url = require('url')
 var fs = require('fs')
 var u = require('../utils.js')
 var w = require('../writer.js')
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
   maxConnections: 1,
@@ -36,7 +38,7 @@ var c = new Crawler({
         }
       })
     }
-    w.writeJson(data)
+    w.writeJson(data, scriptName)
     done()
   }
 })
@@ -44,4 +46,3 @@ var c = new Crawler({
 // Queue just one URL, with default callback
 c.queue('http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids')
 
-module.exports.getData = c.length

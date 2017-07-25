@@ -3,7 +3,10 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
-require('locus');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
+//require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -39,17 +42,15 @@ var c = new Crawler({
                         'tenderNumber' : $this.find('td:nth-child(1)').text().trim()
                     });           
                 }    
-            })           
-            
+            })                       
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
 
 
 // Queue just one URL, with default callback 
- c.queue('https://www.ogs.ny.gov/purchase/snt/lists/telecom.asp');
-
-module.exports.getData = c.length;
+c.queue('https://www.ogs.ny.gov/purchase/snt/lists/telecom.asp');
 
 

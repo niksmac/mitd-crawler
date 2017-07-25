@@ -3,6 +3,9 @@ var Crawler = require("crawler");
 var url = require('url');
 var fs = require('fs');
 var u = require('../utils.js');
+var w = require('../writer.js');
+var path = require('path');
+var scriptName = path.basename(__filename);
 
 var c = new Crawler({
     maxConnections : 1,
@@ -35,9 +38,9 @@ var c = new Crawler({
                         'tenderNumber' : $this.find('td:nth-child(1) a div:nth-child(2)').text().trim()
                     });
                 }
-            })
-           
+            })           
         }
+        w.writeJson(data, scriptName)
         done();
     }
 });
@@ -45,5 +48,3 @@ var c = new Crawler({
 
 // Queue just one URL, with default callback 
 c.queue('https://www.fbo.gov/index?s=opportunity&mode=list&tab=list');
-
-module.exports.getData = c.length;
