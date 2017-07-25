@@ -22,3 +22,4 @@ glob.sync('./src/**/*.js').forEach(function (file) {
   var mname = name.replace('./src/', '')
   var xmname = require('./' + file)
 })
+

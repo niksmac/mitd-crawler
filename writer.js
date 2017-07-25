@@ -1,10 +1,11 @@
 'use strict'
 
 var jsonfile = require('jsonfile')
-var file = './data/opportunities.json'
-
-exports.writeJson = function (jsons) {
-  jsonfile.writeFile(file, jsons, {flag: 'a', spaces: 2}, function (err) {
+exports.writeJson = function (jsons, scriptName) {
+  var file = process.cwd() + '/data/'+scriptName+'.json'
+  var newfile = file.replace('.js', '');
+  var fd = fs.openSync(newfile, 'w');
+  jsonfile.writeFile(newfile, jsons, {spaces: 2}, function (err) {
     console.error(err)
   })
 }

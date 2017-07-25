@@ -25,6 +25,8 @@
     "colors": "^1.1.2",
     "crawler": "^0.4.3",
     "glob": "^7.0.6",
+    "gulp": "^3.9.1",
+    "gulp-merge-json": "^1.0.0",
     "jsonfile": "^3.0.1",
     "konfig": "^0.2.1",
     "moment": "^2.15.0",
