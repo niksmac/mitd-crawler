@@ -23,6 +23,7 @@ var c = new Crawler({
         var link = 'http://admin.ks.gov/offices/procurement-and-contracts/bid-solicitations/'
         var sum1 = $this.find('td:nth-child(4)').text().trim()
 
+      if($this.find('td:nth-child(3)').text() != '') {
         data.push({
           'name': $this.find('td:nth-child(3)').text().trim(),
           'description': $this.find('td:nth-child(3)').text().trim(),
@@ -34,6 +35,7 @@ var c = new Crawler({
           'category': [$this.find('td:nth-child(4)').text().trim()],
           'tenderNumber': $this.find('td:nth-child(2)').text().trim()
         })
+      }
       })
     }
 
