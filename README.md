@@ -1,5 +1,17 @@
 # MITD CRAWLER
 
-* The crawler fetch all the tender data from the sites that listed in the excel sheet provided(Marked as green and yellow).
+ The crawler fetch all the tender data from the sites.
+ 
+ Follow  these commands to execute the script: 
 
-* The data fetched from 
+    `git clone https://github.com/niksmac/mitd-crawler.git`
+    
+    `cd mitd-crawler`
+     
+    `npm install`
+    
+    `node writer.js`
+    
+    `gulp`
+
+The crawler data in json format will be available in dist/combined.json
