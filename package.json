@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node . && gulp",
     "postinstall": "[ -d data ] || mkdir data && [ -d dist ] || mkdir dist"
   },
   "repository": {
