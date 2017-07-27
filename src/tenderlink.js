@@ -6,6 +6,7 @@ var u = require('../utils.js');
 var w = require('../writer.js');
 var path = require('path');
 var scriptName = path.basename(__filename);
+//require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -14,24 +15,29 @@ var c = new Crawler({
         if(error){
             console.log(error);
         } else {
-            $ = cheerio.load(res.body);
-            var data = [];
-            $('div.bizOpportunities div.bizOppWrap').each(function() {
-                var $this = $(this);                                
-                var date  = $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(2) strong').text().trim().split('/');
-                var start_date = new Date(date[2],date[0]-1,date[1]).getTime()/1000; 
 
-                if($this.find('div.bizOppWrapInner dl:nth-child(1) dd').text().trim() != '') {
+            $ = cheerio.load(res.body);
+            var data = [];            
+            $('div.tender-results div.tender-show div.summary div.brief').each(function() {
+
+                var $this = $(this);                                
+                var name = $this.find('div.name').text();
+                var date = $this.find('div.views').text().trim();
+                date = date.substr(date.length - 10).split('/');
+                date = new Date(date[2], date[0] - 1, date[1]).getTime() / 1000;
+                //eval(locus);
+
+                if($this.find('div.name').text() != '') {
                     data.push({
-                        'name'          : $this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim(),
+                        'name'          : $this.find('div.name').text(),
                         'description'   : "NA",
-                        'date'          : new Date(date[2],date[0]-1,date[1]).getTime()/1000,
+                        'date'          : date,
                         'closingDate'   : "NA",
                         'link'          : "https://www2.tenderlink.com/tenders/it/",
                         'currency'     : "NA",
                         'value'        : "NA",
-                        'category'      : [$this.find('div.bizOppWrapInner dl:nth-child(1) dt.catName').text().trim()],
-                        'tenderNumber' : $this.find('div.bizOppWrapInner dl:nth-child(2) dd:nth-child(1)').text().trim()
+                        'category'      : [],
+                        'tenderNumber' : "NA"
                     });
                 }
             })            
