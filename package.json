@@ -22,16 +22,12 @@
   "homepage": "https://github.com/niksmac/mitd-crawler#readme",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "cli-table2": "^0.2.0",
-    "colors": "^1.1.2",
     "crawler": "^0.4.3",
     "glob": "^7.0.6",
     "gulp": "^3.9.1",
-    "gulp-json-concat": "0.0.5",
+    "gulp-copy": "^1.0.0",
     "gulp-merge-json": "^1.0.0",
     "jsonfile": "^3.0.1",
-    "konfig": "^0.2.1",
-    "moment": "^2.15.0",
     "url": "^0.11.0"
   },
   "devDependencies": {
