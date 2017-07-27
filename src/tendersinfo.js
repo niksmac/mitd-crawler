@@ -6,6 +6,7 @@ var u = require('../utils.js')
 var w = require('../writer.js')
 var path = require('path')
 var scriptName = path.basename(__filename)
+//require('locus');
 
 var c = new Crawler({
   maxConnections: 1,
@@ -26,7 +27,7 @@ var c = new Crawler({
           'description': 'NA',
           'date': new Date($this.find('td:nth-child(2)').text().trim()).getTime() / 1000,
           'closingDate': new Date($this.find('td:nth-child(2)').text().trim()).getTime() / 1000,
-          'link': assas[3],
+          'link': assas[5],
           'currency': 'INR',
           'value': summary[1].replace(/[^\d\.]/g, ''),
           'category': [],
