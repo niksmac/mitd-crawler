@@ -1,6 +1,5 @@
 var gulp = require('gulp')
 var merge = require('gulp-merge-json')
-var gulpCopy = require('gulp-copy')
 const SOURCE_FILES = ['dist/*']
 const DESTINATION = './dist/combined/'
 
