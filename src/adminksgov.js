@@ -4,8 +4,8 @@ var url = require('url')
 var fs = require('fs')
 var u = require('../utils.js')
 var w = require('../writer.js')
-var path = require('path');
-var scriptName = path.basename(__filename);
+var path = require('path')
+var scriptName = path.basename(__filename)
 
 var c = new Crawler({
   maxConnections: 1,
@@ -23,24 +23,24 @@ var c = new Crawler({
         var link = 'http://admin.ks.gov/offices/procurement-and-contracts/bid-solicitations/'
         var sum1 = $this.find('td:nth-child(4)').text().trim()
 
-      if($this.find('td:nth-child(3)').text() != '') {
-        data.push({
-          'name': $this.find('td:nth-child(3)').text().trim(),
-          'description': $this.find('td:nth-child(3)').text().trim(),
-          'date': 'NA',
-          'closingDate': end_date,
-          'link': link,
-          'currency': 'NA',
-          'value': 'NA',
-          'category': [$this.find('td:nth-child(4)').text().trim()],
-          'tenderNumber': $this.find('td:nth-child(2)').text().trim()
-        })
-      }
+        if ($this.find('td:nth-child(3)').text() != '') {
+          data.push({
+            'name': $this.find('td:nth-child(3)').text().trim(),
+            'description': $this.find('td:nth-child(3)').text().trim(),
+            'date': 'NA',
+            'closingDate': end_date,
+            'link': link,
+            'currency': 'NA',
+            'value': 'NA',
+            'category': [$this.find('td:nth-child(4)').text().trim()],
+            'tenderNumber': $this.find('td:nth-child(2)').text().trim()
+          })
+        }
       })
     }
 
     w.writeJson(data, scriptName)
-    done();
+    done()
   }
 })
 
