@@ -6,6 +6,7 @@ var u = require('../utils.js')
 var w = require('../writer.js')
 var path = require('path');
 var scriptName = path.basename(__filename);
+require('locus');
 
 var c = new Crawler({
   maxConnections: 1,
@@ -23,8 +24,10 @@ var c = new Crawler({
           var assas = u.urlify(summary[0]).split('"')
           assas = assas[1]
         }
+
         if ($this.find('td:nth-child(1) a').text() != '') {
           data.push({
+            //'uuid' : $this.find('td:nth-child(2) a').text().trim(),
             'name': $this.find('td:nth-child(3)').text().trim(),
             'description': 'NA',
             'date': 'NA',
@@ -33,7 +36,7 @@ var c = new Crawler({
             'currency': 'NA',
             'value': 'NA',
             'category': [],
-            'tenderNumber': 'NA'
+            'tenderNumber': $this.find('td:nth-child(2) a').text().trim()
           })
         }
       })
