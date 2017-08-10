@@ -26,6 +26,7 @@ var c = new Crawler({
                
                 if($this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text() != '') {
                     data.push({
+                        'uuid'          : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text().trim(), 
                         'name'          : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text().trim(),
                         'description'   : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) pre').text().trim(),
                         'date'          : new Date($this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) div._5XYYn span:nth-child(4)').text().trim()).getTime()/1000,
