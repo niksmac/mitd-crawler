@@ -27,6 +27,7 @@ var c = new Crawler({
                  if($this.text().trim() != '') {
 
                      data.push({
+                     'uuid'          : $this.text().trim(),
                      'name'          : $this.text().trim(),
                      'description'   : "NA",
                      'date'          : "NA",
