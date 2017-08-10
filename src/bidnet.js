@@ -24,10 +24,10 @@ var c = new Crawler({
           var assas = u.urlify(summary[0]).split('"')
           assas = assas[1]
         }
-
+        
         if ($this.find('td:nth-child(1) a').text() != '') {
           data.push({
-            //'uuid' : $this.find('td:nth-child(2) a').text().trim(),
+            'uuid' : $this.find('td:nth-child(2) a').text().trim(),
             'name': $this.find('td:nth-child(3)').text().trim(),
             'description': 'NA',
             'date': 'NA',
