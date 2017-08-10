@@ -28,9 +28,11 @@
     "gulp": "^3.9.1",
     "gulp-merge-json": "^1.0.0",
     "jsonfile": "^3.0.1",
+    "object-hash": "^1.1.8",
     "url": "^0.11.0"
   },
   "devDependencies": {
+    "gulp-hash": "^4.1.1",
     "locus": "^1.2.0"
   }
 }
