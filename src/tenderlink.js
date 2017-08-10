@@ -35,7 +35,7 @@ var c = new Crawler({
                         'closingDate'   : "NA",
                         'link'          : "https://www2.tenderlink.com/tenders/it/",
                         'currency'     : "NA",
-                        'value'        : "NA",
+                        'value'        : 0,
                         'category'      : [],
                         'tenderNumber' : "NA"
                     });

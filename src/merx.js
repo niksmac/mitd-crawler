@@ -38,7 +38,7 @@ var c = new Crawler({
                         'closingDate'   : end_date,
                         'link'          : "https://www.merx.com/iris-tenders-search.active-1470801600000-1471406399000-Last%20Week-ETENDMERX--8534-efjn-en.jsa?SD=DESC&SF=PUBLICATION_DATE"+assas,                 
                         'currency'     : "NA",
-                        'value'        : "NA",
+                        'value'        : 0,
                         'category'      : [],
                         'tenderNumber' : "NA"
                     });

@@ -33,7 +33,7 @@ var c = new Crawler({
                     'closingDate'   : "NA",
                     'link'          : "https://www.tenders.wa.gov.au/watenders/index.do"+link,                  
                     'currency'     : "NA",
-                    'value'        : "NA",                    
+                    'value'        : 0,                    
                     'category'      : [],
                     'tenderNumber' : "NA"
                     });

@@ -32,7 +32,7 @@ var c = new Crawler({
             'closingDate': end_date,
             'link': link,
             'currency': 'NA',
-            'value': 'NA',
+            'value': 0,
             'category': [$this.find('td:nth-child(4)').text().trim()],
             'tenderNumber': $this.find('td:nth-child(2)').text().trim()
           })

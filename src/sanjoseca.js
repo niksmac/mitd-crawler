@@ -34,7 +34,7 @@ var c = new Crawler({
                         'closingDate'   : new Date($this.find('td:nth-child(5)').text().trim()).getTime()/1000,
                         'link'          : "https://www.bidsync.com"+link,
                         'currency'     : "NA",
-                        'value'        : "NA",
+                        'value'        : 0,
                         'category'      : "NA",
                         'tenderNumber' : $this.find('td:nth-child(1)').text().trim()
                     });

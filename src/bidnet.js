@@ -33,7 +33,7 @@ var c = new Crawler({
             'closingDate': 'NA',
             'link': 'http://www.bidnet.com/closed-government-contracts/information-technology---telecom---electronics-bids' + assas,
             'currency': 'NA',
-            'value': 'NA',
+            'value': 0,
             'category': [],
             'tenderNumber': $this.find('td:nth-child(2) a').text().trim()
           })

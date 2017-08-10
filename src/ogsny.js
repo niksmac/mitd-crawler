@@ -35,7 +35,7 @@ var c = new Crawler({
                         'closingDate'   : "NA",
                         'link'          : "https://www.ogs.ny.gov"+link,                  
                         'currency'     : "NA",
-                        'value'        : "NA",                   
+                        'value'        : 0,                   
                         'category'      : "NA",
                         'tenderNumber' : $this.find('td:nth-child(1)').text().trim()
                     });           

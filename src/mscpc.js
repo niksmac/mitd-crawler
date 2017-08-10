@@ -33,7 +33,7 @@ var c = new Crawler({
                      'closingDate'   : "NA",
                      'link'          : link,                
                      'currency'     : "NA",
-                     'value'        : "NA",       
+                     'value'        : 0,       
                      'category'      : [],
                      'tenderNumber' : "NA"
                     });

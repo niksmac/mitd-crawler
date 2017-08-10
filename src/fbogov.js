@@ -33,7 +33,7 @@ var c = new Crawler({
                         'closingDate'   : "NA",
                         'link'          : "https://www.fbo.gov/index"+link,
                         'currency'     : "NA",
-                        'value'        : "NA",
+                        'value'        : 0,
                         'category'      : [$this.find('td:nth-child(2) div.pagency').text().trim()],
                         'tenderNumber' : $this.find('td:nth-child(1) a div:nth-child(2)').text().trim()
                     });

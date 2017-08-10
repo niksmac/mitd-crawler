@@ -38,7 +38,7 @@ var c = new Crawler({
                         'closingDate'   : close_date,
                         'link'          : "https://procure.ohio.gov"+link,                  
                         'currency'     : "NA",
-                        'value'        : "NA",                   
+                        'value'        : 0,                   
                         'category'      : [$this.find('td:nth-child(2)').text().trim()],
                         'tenderNumber' : $this.find('td:nth-child(7)').text().trim()
                     });           
