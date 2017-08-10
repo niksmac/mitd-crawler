@@ -6,6 +6,7 @@ var u = require('../utils.js');
 var w = require('../writer.js');
 var path = require('path');
 var scriptName = path.basename(__filename);
+require('locus')
 
 var c = new Crawler({
     maxConnections : 1,
@@ -29,9 +30,9 @@ var c = new Crawler({
                     assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1];
                 }
-
                 if($this.find('td:nth-child(1) a').text().trim() != '') {
                     data.push({
+                        'uuid'          : $this.find('td:nth-child(1) a').text().trim(),
                         'name'          : $this.find('td:nth-child(1) a').text().trim(),
                         'description'   : "NA",
                         'date'          : start_date,
