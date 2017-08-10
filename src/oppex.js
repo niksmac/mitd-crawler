@@ -26,14 +26,13 @@ var c = new Crawler({
                
                 if($this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text() != '') {
                     data.push({
-                        'uuid'          : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text().trim(), 
                         'name'          : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) h2').text().trim(),
                         'description'   : $this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) pre').text().trim(),
                         'date'          : new Date($this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) div._5XYYn span:nth-child(4)').text().trim()).getTime()/1000,
                         'closingDate'   : new Date($this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) div._5XYYn span:nth-child(5) span:nth-child(2)').text().trim()).getTime()/1000,
                         'link'          : "https://oppex.com/search?description%5B0%5D%5Bvalue%5D=IT&description%5B0%5D%5Boperator%5D=OR&description%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Bvalue%5D=US&country%5B0%5D%5Bstrict%5D=false&country%5B0%5D%5Boperator%5D=OR&deadlineFrom%5Bvalue%5D=2016-08-"+assas,                    
                         'currency'     : "NA",
-                        'value'        : "NA",                   
+                        'value'        : 0,
                         'category'      : [$this.find('div:nth-child(1) div:nth-child(2) div:nth-child(2) div._5XYYn span._2EnoJ').text().trim()],
                         'tenderNumber' : "NA"
                     });

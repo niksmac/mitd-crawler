@@ -32,7 +32,6 @@ var c = new Crawler({
                 }
                 if($this.find('td:nth-child(1) a').text().trim() != '') {
                     data.push({
-                        'uuid'          : $this.find('td:nth-child(1) a').text().trim(),
                         'name'          : $this.find('td:nth-child(1) a').text().trim(),
                         'description'   : "NA",
                         'date'          : start_date,

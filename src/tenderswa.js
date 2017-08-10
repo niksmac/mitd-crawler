@@ -27,7 +27,6 @@ var c = new Crawler({
                 if($this.find('table.subtitle a').text().trim() != '') {
 
                     data.push({
-                    'uuid'          : $this.find('table.subtitle a').text().trim(),
                     'name'          : $this.find('table.subtitle a').text().trim(),
                     'description'   : $this[0].children[2].data.trim(),
                     'date'          : new Date($this.find('table.subtitle span').text().trim()).getTime()/1000,

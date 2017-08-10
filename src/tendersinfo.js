@@ -23,7 +23,6 @@ var c = new Crawler({
         var assas = u.urlify(summary[0]).split('"')
 
         data.push({
-          'uuid': $this.find('td:nth-child(3)').text().trim(),
           'name': $this.find('td:nth-child(3)').text().trim(),
           'description': 'NA',
           'date': new Date($this.find('td:nth-child(2)').text().trim()).getTime() / 1000,

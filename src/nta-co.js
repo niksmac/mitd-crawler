@@ -27,7 +27,6 @@ var c = new Crawler({
 
                 if($this.find('.views-field-title').text().trim() != '') {
                     data.push({
-                        'uuid'          : $this.find('td:nth-child(2)').text().trim(),
                         'name'          : $this.find('.views-field-title').text().trim(),
                         'description'   : "NA",
                         'date'          : start_date,

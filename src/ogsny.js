@@ -29,7 +29,6 @@ var c = new Crawler({
                
                 if(title != '') {
                     data.push({
-                        'uuid'          : $this.find('td:nth-child(1)').text().trim(),
                         'name'          : title,
                         'description'   : title,
                         'date'          : "NA",

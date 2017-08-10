@@ -23,12 +23,9 @@ var c = new Crawler({
         var end_date = new Date(date[2], date[0] - 1, date[1]).getTime() / 1000
         var link = 'http://admin.ks.gov/offices/procurement-and-contracts/bid-solicitations/'
         var sum1 = $this.find('td:nth-child(4)').text().trim()
-        // var tenderNumber = $this.find('td:nth-child(2)').text().trim()
-        // eval(locus)
 
         if ($this.find('td:nth-child(3)').text() != '') {
           data.push({
-            'uuid' : $this.find('td:nth-child(2)').text().trim(),
             'name': $this.find('td:nth-child(3)').text().trim(),
             'description': $this.find('td:nth-child(3)').text().trim(),
             'date': 'NA',

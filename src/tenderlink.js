@@ -29,7 +29,6 @@ var c = new Crawler({
 
                 if($this.find('div.name').text() != '') {
                     data.push({
-                        'uuid'          : $this.find('div.name').text(),
                         'name'          : $this.find('div.name').text(),
                         'description'   : "NA",
                         'date'          : date,
