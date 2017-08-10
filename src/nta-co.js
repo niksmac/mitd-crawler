@@ -27,6 +27,7 @@ var c = new Crawler({
 
                 if($this.find('.views-field-title').text().trim() != '') {
                     data.push({
+                        //'uuid'          : $this.find('td:nth-child(2)').text().trim(),
                         'name'          : $this.find('.views-field-title').text().trim(),
                         'description'   : "NA",
                         'date'          : start_date,
@@ -35,7 +36,7 @@ var c = new Crawler({
                         'currency'     : "NA",
                         'value'        : "NA",
                         'category'      : [$this.find('.views-field-field-domains').text().trim()],
-                        'tenderNumber' : $this.find('views-field-field-tender-number').text().trim()
+                        'tenderNumber' : $this.find('td:nth-child(2)').text().trim()
                     });
                 }
             })
