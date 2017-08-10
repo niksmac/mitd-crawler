@@ -31,6 +31,7 @@ var c = new Crawler({
                 if(typeof(title) != "undefined") {
 
                     data.push({
+                        'uuid'          : title.trim(),
                         'name'          : title.trim(),
                         'description'   : "NA",
                         'date'          : "NA",
