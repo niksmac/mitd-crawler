@@ -6,7 +6,6 @@ var u = require('../utils.js');
 var w = require('../writer.js');
 var path = require('path');
 var scriptName = path.basename(__filename);
-//require('locus');
 
 var c = new Crawler({
     maxConnections : 1,
@@ -27,10 +26,10 @@ var c = new Crawler({
                     var link = u.urlify(sum[0]).split('"');
                     link = link[1];
                 }
-                //eval(locus);                
-
+               
                 if(title != '') {
                     data.push({
+                        'uuid'          : $this.find('td:nth-child(1)').text().trim(),
                         'name'          : title,
                         'description'   : title,
                         'date'          : "NA",
