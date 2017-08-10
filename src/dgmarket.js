@@ -28,6 +28,7 @@ var c = new Crawler({
 
                 if($this.find('td:nth-child(2) div.ln_notice_title').text() != '') {
                     data.push({
+                        'uuid'          : $this.find('td:nth-child(2) div.ln_notice_title').text().trim(),
                         'name'          : $this.find('td:nth-child(2) div.ln_notice_title').text().trim(),
                         'description'   : "NA",
                         'date'          : new Date($this.find('td:nth-child(4) div.ln_date').text().trim()).getTime()/1000,
