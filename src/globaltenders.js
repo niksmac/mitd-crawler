@@ -19,11 +19,14 @@ var c = new Crawler({
             $('div.classWithPad div.cent table tr td table').each(function() {
                 var $this = $(this);
                 var assas = "";
-               if ($this.find('tr:nth-child(5) td table tr td:nth-child(2)').html() != null){
+                if ($this.find('tr:nth-child(5) td table tr td:nth-child(2)').html() != null){
                     var summary = $this.find('tr:nth-child(5) td table tr td:nth-child(2)').html().trim().split('<br>');
                     assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1];
-               }                             
+                }  
+                var category = $this.find('tr:nth-child(2) td table tr td:nth-child(2)').text().trim();
+                category = category.split(",").map(function (val) { return val ; }); 
+                console.log(category)                          
 
                 if($this.find('tr:nth-child(1) td table tr td:nth-child(4)').text() != '') {
                     data.push({
@@ -34,7 +37,7 @@ var c = new Crawler({
                         'link'          : "http://www.globaltenders.com/"+assas,                   
                         'currency'     : "INR",
                         'value'        : $this.find('tr:nth-child(5) td table tr td:nth-child(4)').text().replace(/[^\d\.]/g, ''),
-                        'category'      : $this.find('tr:nth-child(2) td table tr td:nth-child(2)').text().split(","),
+                        'category'      : category,
                         'tenderNumber'  : $this.find('tr:nth-child(4) td table tr td:nth-child(4)').text().trim()
                     });
                 }    
