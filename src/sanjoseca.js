@@ -35,7 +35,7 @@ var c = new Crawler({
                         'link'          : "https://www.bidsync.com"+link,
                         'currency'     : "NA",
                         'value'        : 0,
-                        'category'      : "NA",
+                        'category'      : [],
                         'tenderNumber' : $this.find('td:nth-child(1)').text().trim()
                     });
                 }
