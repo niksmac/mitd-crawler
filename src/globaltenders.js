@@ -25,8 +25,7 @@ var c = new Crawler({
                     assas = assas[1];
                 }  
                 var category = $this.find('tr:nth-child(2) td table tr td:nth-child(2)').text().trim();
-                category = category.split(",").map(function (val) { return val ; }); 
-                console.log(category)                          
+                category = category.split(",").map(function (val) { return val ; });                           
 
                 if($this.find('tr:nth-child(1) td table tr td:nth-child(4)').text() != '') {
                     data.push({
