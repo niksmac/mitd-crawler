@@ -6,7 +6,6 @@ var u = require('../utils.js')
 var w = require('../writer.js')
 var path = require('path');
 var scriptName = path.basename(__filename);
-require('locus');
 
 var c = new Crawler({
   maxConnections: 1,
