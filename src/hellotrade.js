@@ -20,6 +20,9 @@ var c = new Crawler({
                 var $this = $(this);                
                 var summary = $this.find('p').html().trim().split('<br>');                
                 var assas  = u.urlify(summary[0]).split('"');
+
+                var category = $this.find('div.tendr_main div.tendr_right div:nth-child(2) p.tendr_md').text().trim();
+                category = category.split(",").map(function (val) { return val ; });
                 
                 if($this.find('p a').text() != '') {
                     data.push({
@@ -30,7 +33,7 @@ var c = new Crawler({
                         'link'          : "http://tenders.hellotrade.com/tenders.php?pid=33676653"+assas,                  
                         'currency'     : "USD",
                         'value'        : $this.find('div.tendr_main div.ht_100').text().replace(/[^\d\.]/g, ''),                   
-                        'category'      : [$this.find('div.tendr_main div.tendr_right div:nth-child(2) p.tendr_md').text().trim()],
+                        'category'      : category,
                         'tenderNumber' : "NA"
                     });
                 }
