@@ -25,6 +25,8 @@ var c = new Crawler({
                     assas  = u.urlify(summary[0]).split('"');
                     assas = assas[1];
                 }
+                var category = $this.find('td:nth-child(2) p:nth-child(4) span.ln_listing').text().trim();
+                category = category.split(",").map(function (val) { return val ; });
 
                 if($this.find('td:nth-child(2) div.ln_notice_title').text() != '') {
                     data.push({
@@ -35,7 +37,7 @@ var c = new Crawler({
                         'link'          : "http://www.dgmarket.com/tenders/list.do?sub=it-services-consulting-software-development-internet-and-support-in-United-States-72000000&locationISO=us"+assas,
                         'currency'     : "NA",
                         'value'        : 0,
-                        'category'      : $this.find('td:nth-child(2) p:nth-child(4) span.ln_listing').text().split(","),
+                        'category'      : category,
                         'tenderNumber' : "NA"
                     });
                 }
