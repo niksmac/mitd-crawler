@@ -39,7 +39,7 @@ var c = new Crawler({
                         'link'          : "https://procure.ohio.gov"+link,                  
                         'currency'     : "NA",
                         'value'        : 0,                   
-                        'category'      : [$this.find('td:nth-child(2)').text().trim()],
+                        'category'      : $this.find('td:nth-child(2)').text().trim().split(","),
                         'tenderNumber' : $this.find('td:nth-child(7)').text().trim()
                     });           
                 }    
