@@ -22,7 +22,8 @@ var c = new Crawler({
         var date = $this.find('td:nth-child(1)').text().trim().split('/')
         var end_date = new Date(date[2], date[0] - 1, date[1]).getTime() / 1000
         var link = 'http://admin.ks.gov/offices/procurement-and-contracts/bid-solicitations/'
-        var sum1 = $this.find('td:nth-child(4)').text().trim()
+        var category =  $this.find('td:nth-child(4)').text().trim();
+        category = category.split(',').join('');
 
         if ($this.find('td:nth-child(3)').text() != '') {
           data.push({
@@ -33,7 +34,7 @@ var c = new Crawler({
             'link': link,
             'currency': 'NA',
             'value': 0,
-            'category': [$this.find('td:nth-child(4)').text().trim()],
+            'category': [category],
             'tenderNumber': $this.find('td:nth-child(2)').text().trim()
           })
         }
